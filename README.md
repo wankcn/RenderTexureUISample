@@ -12,4 +12,4 @@ DateTime: 2022-10-31
 
 Demo效果：
 
-![demo](Assets/Document/gif/demo.gif)
+![demo](./Document/gif/demo.gif)
