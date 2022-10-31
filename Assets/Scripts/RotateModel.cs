@@ -9,7 +9,7 @@ public class RotateModel : MonoBehaviour
     private bool isRotate;
     private Vector3 startPoint;
     private Vector3 startAngle;
-    private float rotateScale = 1f;
+    [Range(0.1f, 1f)] public float rotateScale = 0.8f;
 
     private void Update()
     {
