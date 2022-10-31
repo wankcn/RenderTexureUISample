@@ -40,4 +40,6 @@ public class ChooseModel : MonoBehaviour
         currentGo = go;
         Debug.Log(name);
     }
+
+  
 }
