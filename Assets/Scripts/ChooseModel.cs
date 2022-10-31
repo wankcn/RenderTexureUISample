@@ -24,20 +24,20 @@ public class ChooseModel : MonoBehaviour
 
     void LoadModel(Button btn)
     {
-        if (currentGo != null)
-        {
-            GameObject.Destroy(currentGo);
-        }
+        // 每次加载前销毁 可优化：记录上一次，每一次重新点击同一个按钮判断是否徐娅重新加载
+        if (currentGo != null) Destroy(currentGo);
 
         var index = btnList.IndexOf(btn);
         var name = nameList[index];
         GameObject prefab = Resources.Load<GameObject>("Prefabs/" + name);
         var go = Instantiate(prefab);
+        
+        // 设置坐标和父级关系，每次设置前需要把parent的旋转角度归0
         go.transform.position = Vector3.zero;
         modelController.eulerAngles = Vector3.zero;
         go.transform.SetParent(modelController, false);
+
         currentGo = go;
-        
         Debug.Log(name);
     }
 }
